@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.guy.common" >
+
+    <uses-sdk android:minSdkVersion="26" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application>
+        <activity
+            android:name="com.guy.common.Activity_PanelBase"
+            android:exported="true" />
+        <!-- Declare components provided by the library -->
+        <activity
+            android:name="com.guy.common.GameOver"
+            android:exported="true" /> <!-- 'exported' may be required based on your targeting and use-case -->
+    </application>
+
+</manifest>

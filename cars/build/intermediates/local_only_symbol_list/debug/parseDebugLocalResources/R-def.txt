@@ -1,0 +1,17 @@
+R_DEF: Internal format may change without notice
+local
+color black
+color button_color
+color status_bar_color
+color white
+drawable img_icon
+mipmap ic_launcher
+mipmap ic_launcher_foreground
+mipmap ic_launcher_round
+string app_name
+string title
+style Base.Theme.Class24BAndb2
+style CustomButton
+style Theme.Class24BAndb2
+xml backup_rules
+xml data_extraction_rules
