@@ -8,7 +8,7 @@ Features
     Multiple Choice Questions: Answer questions based on images with four possible answers.
     Hint Feature: Use hints to eliminate two incorrect answers.
     Hearts System: Users have four hearts, losing one for each incorrect answer.
-    Score Tracking: Tracks the user's score and displays the current and high scores.
+   
     Game Over Screen: Displays when the user runs out of hearts, with options to restart or exit the game.
 
 Installation
@@ -66,4 +66,5 @@ To customize the app for different themes or questions:
 
     Add New Questions: Modify the respective DataManager class in each quiz module to include new questions and images.
     Change Themes: Modify the styles in the res/values/styles.xml file to update the app's theme and button colors.
-    
+   
+
