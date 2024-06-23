@@ -11,19 +11,6 @@ Features
    
     Game Over Screen: Displays when the user runs out of hearts, with options to restart or exit the game.
 
-Installation
-
-To install and run the Quiz App Collection locally, follow these steps:
-
-    Clone the repository:
-
-    bash
-
-    git clone https://github.com/yourusername/quiz-app-collection.git
-
-    Open the project: Open the project in your preferred Android development environment (e.g., Android Studio).
-
-    Build and Run: Build and run the desired quiz app (Cars, Animals, or Brands) on an emulator or a physical Android device.
 
 Usage
 
