@@ -59,4 +59,10 @@ public class GameManager {
             currentQuestion = 0; // Or handle the end of the quiz
         }
     }
+    public String getCorrectAnswer() {
+        if (questions != null && !questions.isEmpty()) {
+            return questions.get(currentQuestion).getCorrectAnswer();
+        }
+        return ""; // Return an empty string or handle it based on your requirement
+    }
 }

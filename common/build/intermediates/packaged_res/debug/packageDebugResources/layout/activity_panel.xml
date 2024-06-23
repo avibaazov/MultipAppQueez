@@ -34,7 +34,9 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_heart" />
 
+
     <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/linearLayoutCompat"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
@@ -145,7 +147,17 @@
         </androidx.appcompat.widget.LinearLayoutCompat>
 
     </androidx.appcompat.widget.LinearLayoutCompat>
-    
-    
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_hint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="hint"
+        android:backgroundTint="@color/button_color"
+        app:layout_constraintBottom_toTopOf="@+id/panel_IMG_question"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayoutCompat" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

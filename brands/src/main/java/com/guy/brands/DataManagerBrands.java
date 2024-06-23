@@ -4,6 +4,7 @@ import com.guy.common.DataManagerBase;
 import com.guy.common.Question;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class DataManagerBrands extends DataManagerBase {
 
@@ -33,7 +34,7 @@ public class DataManagerBrands extends DataManagerBase {
                 .setImage("https://static.vecteezy.com/system/resources/previews/010/994/239/non_2x/adidas-logo-black-symbol-clothes-design-icon-abstract-football-illustration-with-white-background-free-vector.jpg")
                 .setAnswers(new String[]{"Nike", "Adidas", "Puma", "Reebok"},"Adidas"));
 
-
+        Collections.shuffle(questions);
         return questions;
     }
 }

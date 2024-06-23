@@ -14,10 +14,14 @@ import androidx.appcompat.widget.AppCompatImageView;
 import com.bumptech.glide.Glide;
 import com.google.android.material.button.MaterialButton;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 public class Activity_PanelBase extends AppCompatActivity {
 
     protected DataManagerBase dataManagerBase;
-
+    private MaterialButton hint;
     private AppCompatImageView panel_IMG_question;
     private MaterialButton[] panel_BTN_answers;
     private AppCompatImageView[] panel_IMG_hearts;
@@ -33,10 +37,43 @@ public class Activity_PanelBase extends AppCompatActivity {
         gameToast = Toast.makeText(this, "", Toast.LENGTH_SHORT); // Initialize the Toast
         gameManager = new GameManager(dataManagerBase);
         next();
+        findViewById(R.id.button_hint).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                useHint();
+            }
+        });
         setupButtonListeners();
+    }
+    private List<Integer> getIndicesToHide() {
+        List<Integer> incorrectIndices = new ArrayList<>();
+        String correctAnswer = gameManager.getCorrectAnswer();
+
+        // Collect indices of incorrect answers
+        for (int i = 0; i < panel_BTN_answers.length; i++) {
+            if (!panel_BTN_answers[i].getText().toString().equals(correctAnswer)) {
+                incorrectIndices.add(i);
+            }
+        }
+
+        // Shuffle and pick the first two indices (ensure there are at least two incorrect answers)
+        Collections.shuffle(incorrectIndices);
+        return incorrectIndices.subList(0, Math.min(2, incorrectIndices.size()));
+    }
+    private void useHint() {
+        List<Integer> indicesToHide = getIndicesToHide();
+        for (int index : indicesToHide) {
+            panel_BTN_answers[index].setVisibility(View.INVISIBLE);
+        }
+        // Optionally disable the hint button to prevent multiple uses
+        findViewById(R.id.button_hint).setVisibility(View.INVISIBLE);
     }
 
     private void next() {
+        for (MaterialButton button : panel_BTN_answers) {
+            button.setVisibility(View.VISIBLE);
+        }
+        findViewById(R.id.button_hint).setVisibility(View.VISIBLE);
         String image = gameManager.getCurrentImage();
         Glide.with(this).load(image).into(panel_IMG_question);
 
@@ -70,6 +107,7 @@ public class Activity_PanelBase extends AppCompatActivity {
                 findViewById(R.id.panel_IMG_hearts2),
                 findViewById(R.id.panel_IMG_hearts3),
         };
+        //hint=findViewById(R.id.button_hint);
     }
     private void handleAnswer(String selectedAnswer) {
 

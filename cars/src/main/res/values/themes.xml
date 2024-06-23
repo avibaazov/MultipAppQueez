@@ -2,18 +2,25 @@
     <!-- Base application theme -->
     <style name="Base.Theme.Class24BAndb2" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here -->
+        <item name="colorPrimary">@color/dark_gray</item>
+        <item name="colorPrimaryVariant">@color/teal</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="android:statusBarColor">@color/dark_gray</item>
+        <item name="android:navigationBarColor">@color/dark_gray</item>
+        <item name="android:windowBackground">@color/dark_gray</item>
+        <item name="android:textColor">@android:color/white</item>
+
     </style>
 
     <!-- Specific application theme that overrides the base theme -->
     <style name="Theme.Class24BAndb2" parent="Base.Theme.Class24BAndb2">
         <!-- Define a custom style for buttons -->
         <item name="buttonStyle">@style/CustomButton</item>
-        <item name="android:statusBarColor">@color/status_bar_color</item> <!-- Used for the status bar in API 21+ -->
     </style>
 
     <!-- Button style that uses the custom color -->
     <style name="CustomButton" parent="Widget.Material3.Button">
         <item name="backgroundTint">@color/button_color</item> <!-- Set the button background color -->
-        <item name="android:textColor">@android:color/white</item> <!-- Set the text color -->
+        <item name="android:textColor">@color/black</item> <!-- Set the text color -->
     </style>
 </resources>
